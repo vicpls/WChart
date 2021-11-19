@@ -1,0 +1,41 @@
+8874-8874/com.hh.wchart W/com.hh.wchart: Accessing hidden method Landroid/view/View;->computeFitSystemWindows(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z (greylist, reflection, allowed)
+8874-8874/com.hh.wchart W/com.hh.wchart: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (greylist, reflection, allowed)
+8874-8874/com.hh.wchart D/AndroidRuntime: Shutting down VM
+    
+    
+    --------- beginning of crash
+8874-8874/com.hh.wchart E/AndroidRuntime: FATAL EXCEPTION: main
+    Process: com.hh.wchart, PID: 8874
+    java.lang.RuntimeException: Unable to start activity ComponentInfo{com.hh.wchart/com.hh.wchart.MainActivity}: kotlin.UninitializedPropertyAccessException: lateinit property canvas has not been initialized
+        at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3449)
+        at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:3601)
+        at android.app.servertransaction.LaunchActivityItem.execute(LaunchActivityItem.java:85)
+        at android.app.servertransaction.TransactionExecutor.executeCallbacks(TransactionExecutor.java:135)
+        at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:95)
+        at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2066)
+        at android.os.Handler.dispatchMessage(Handler.java:106)
+        at android.os.Looper.loop(Looper.java:223)
+        at android.app.ActivityThread.main(ActivityThread.java:7656)
+        at java.lang.reflect.Method.invoke(Native Method)
+        at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:592)
+        at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:947)
+     Caused by: kotlin.UninitializedPropertyAccessException: lateinit property canvas has not been initialized
+        at com.db.williamchart.view.AxisChartView.getCanvas(AxisChartView.kt:83)
+        at com.db.williamchart.view.LineChartView.drawLine(LineChartView.kt:96)
+        at com.hh.wchart.MainActivity.onCreate(MainActivity.kt:27)
+        at android.app.Activity.performCreate(Activity.java:7994)
+        at android.app.Activity.performCreate(Activity.java:7978)
+        at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1309)
+        at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3422)
+        at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:3601) 
+        at android.app.servertransaction.LaunchActivityItem.execute(LaunchActivityItem.java:85) 
+        at android.app.servertransaction.TransactionExecutor.executeCallbacks(TransactionExecutor.java:135) 
+        at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:95) 
+        at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2066) 
+        at android.os.Handler.dispatchMessage(Handler.java:106) 
+        at android.os.Looper.loop(Looper.java:223) 
+        at android.app.ActivityThread.main(ActivityThread.java:7656) 
+        at java.lang.reflect.Method.invoke(Native Method) 
+        at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:592) 
+        at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:947) 
+521-4864/system_process W/ActivityTaskManager:   Force finishing activity com.hh.wchart/.MainActivity
